@@ -7,7 +7,7 @@
 %define url_ver %(echo %{version} | cut -d. -f1,2)
 
 Name:           amtk
-Version:	5.0.2
+Version:	5.1.1
 Release:	1
 Summary:        Text editor product line
 Group:		System/Libraries
@@ -72,7 +72,7 @@ the functionality of the installed %{name} package.
 %autosetup
 
 %build
-%configure2_5x --enable-installed-tests
+%configure --enable-installed-tests
 %make_build V=1
 
 %install
