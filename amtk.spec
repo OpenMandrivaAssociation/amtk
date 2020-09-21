@@ -7,7 +7,7 @@
 %define url_ver %(echo %{version} | cut -d. -f1,2)
 
 Name:           amtk
-Version:	5.1.2
+Version:	5.2.0
 Release:	1
 Summary:        Text editor product line
 Group:		System/Libraries
@@ -21,7 +21,7 @@ BuildRequires:  gettext
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
-BuildRequires:  pkgconfig(gtksourceview-3.0)
+BuildRequires:  pkgconfig(gtksourceview-4.0)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(uchardet)
 
