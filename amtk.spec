@@ -74,7 +74,8 @@ the functionality of the installed %{name} package.
 %autosetup -p1
 
 %build
-%meson
+%meson  \
+        -Dgtk_doc
 %meson_build
 
 %install
