@@ -23,6 +23,7 @@ BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gtksourceview-4)
+BuildRequires:  pkgconfig(gtk-doc)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(uchardet)
 
