@@ -75,7 +75,7 @@ the functionality of the installed %{name} package.
 
 %build
 %meson  \
-        -Dgtk_doc
+        -Dgtk_doc=true
 %meson_build
 
 %install
