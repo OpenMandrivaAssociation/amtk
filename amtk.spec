@@ -7,7 +7,7 @@
 %define url_ver %(echo %{version} | cut -d. -f1,2)
 
 Name:           amtk
-Version:	5.2.0
+Version:	5.3.1
 Release:	1
 Summary:        Text editor product line
 Group:		System/Libraries
@@ -17,11 +17,13 @@ URL:            https://wiki.gnome.org/Projects/Amtk
 Source0:        https://download.gnome.org/sources/amtk/%{url_ver}/amtk-%{version}.tar.xz
 
 BuildRequires:  gcc
+BuildRequires:  meson
 BuildRequires:  gettext
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gtksourceview-4)
+BuildRequires:  pkgconfig(gtk-doc)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(uchardet)
 
@@ -60,23 +62,24 @@ Obsoletes:	%{_lib}amtk-devel < 4.99.1-2
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
-%package        tests
-Summary:        Tests for the %{name} package
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+#package        tests
+#Summary:        Tests for the %{name} package
+#Requires:       %{name}%{?_isa} = %{version}-%{release}
 
-%description    tests
-The %{name}-tests package contains tests that can be used to verify
-the functionality of the installed %{name} package.
+#description    tests
+#The %{name}-tests package contains tests that can be used to verify
+#the functionality of the installed %{name} package.
 
 %prep
-%autosetup
+%autosetup -p1
 
 %build
-%configure --enable-installed-tests
-%make_build V=1
+%meson  \
+        -Dgtk_doc=true
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 find %{buildroot} -name '*.la' -delete
 
@@ -84,7 +87,7 @@ find %{buildroot} -name '*.la' -delete
 
 %files -f amtk-%{api}.lang
 %license COPYING
-%doc AUTHORS NEWS README
+%doc NEWS README.md
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Amtk-%{api}.typelib
@@ -93,12 +96,13 @@ find %{buildroot} -name '*.la' -delete
 %{_libdir}/libamtk-%{api}.so.%{major}{,.*}
 
 %files -n %devname
-%doc %{_datadir}/gtk-doc/html/amtk-5.0/
+#doc #{_datadir}/gtk-doc/html/amtk-5.0/
+%{_datadir}/gtk-doc/html/amtk-5/*
 %{_includedir}/amtk-%{api}/
 %{_libdir}/libamtk-%{api}.so
 %{_libdir}/pkgconfig/amtk-%{api}.pc
 %{_datadir}/gir-1.0/Amtk-%{api}.gir
 
-%files tests
-%{_libexecdir}/installed-tests/amtk-%{api}/
-%{_datadir}/installed-tests/amtk-%{api}/
+#files tests
+#{_libexecdir}/installed-tests/amtk-%{api}/
+#{_datadir}/installed-tests/amtk-%{api}/
