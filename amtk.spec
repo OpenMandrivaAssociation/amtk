@@ -62,13 +62,13 @@ Obsoletes:	%{_lib}amtk-devel < 4.99.1-2
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
-%package        tests
-Summary:        Tests for the %{name} package
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+#package        tests
+#Summary:        Tests for the %{name} package
+#Requires:       %{name}%{?_isa} = %{version}-%{release}
 
-%description    tests
-The %{name}-tests package contains tests that can be used to verify
-the functionality of the installed %{name} package.
+#description    tests
+#The %{name}-tests package contains tests that can be used to verify
+#the functionality of the installed %{name} package.
 
 %prep
 %autosetup -p1
@@ -102,6 +102,6 @@ find %{buildroot} -name '*.la' -delete
 %{_libdir}/pkgconfig/amtk-%{api}.pc
 %{_datadir}/gir-1.0/Amtk-%{api}.gir
 
-%files tests
-%{_libexecdir}/installed-tests/amtk-%{api}/
-%{_datadir}/installed-tests/amtk-%{api}/
+#files tests
+#{_libexecdir}/installed-tests/amtk-%{api}/
+#{_datadir}/installed-tests/amtk-%{api}/
