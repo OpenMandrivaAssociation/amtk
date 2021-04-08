@@ -96,7 +96,7 @@ find %{buildroot} -name '*.la' -delete
 %{_libdir}/libamtk-%{api}.so.%{major}{,.*}
 
 %files -n %devname
-%doc %{_datadir}/gtk-doc/html/amtk-5.0/
+#doc #{_datadir}/gtk-doc/html/amtk-5.0/
 %{_includedir}/amtk-%{api}/
 %{_libdir}/libamtk-%{api}.so
 %{_libdir}/pkgconfig/amtk-%{api}.pc
