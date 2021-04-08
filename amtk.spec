@@ -7,7 +7,7 @@
 %define url_ver %(echo %{version} | cut -d. -f1,2)
 
 Name:           amtk
-Version:	5.2.0
+Version:	5.3.1
 Release:	1
 Summary:        Text editor product line
 Group:		System/Libraries
@@ -17,6 +17,7 @@ URL:            https://wiki.gnome.org/Projects/Amtk
 Source0:        https://download.gnome.org/sources/amtk/%{url_ver}/amtk-%{version}.tar.xz
 
 BuildRequires:  gcc
+BuildRequires:  meson
 BuildRequires:  gettext
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
@@ -69,14 +70,14 @@ The %{name}-tests package contains tests that can be used to verify
 the functionality of the installed %{name} package.
 
 %prep
-%autosetup
+%autosetup -p1
 
 %build
-%configure --enable-installed-tests
-%make_build V=1
+%meson
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 find %{buildroot} -name '*.la' -delete
 
