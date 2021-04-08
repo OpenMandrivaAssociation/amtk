@@ -85,7 +85,7 @@ find %{buildroot} -name '*.la' -delete
 
 %files -f amtk-%{api}.lang
 %license COPYING
-%doc AUTHORS NEWS README
+%doc NEWS README.md
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Amtk-%{api}.typelib
