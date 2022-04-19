@@ -86,7 +86,6 @@ find %{buildroot} -name '*.la' -delete
 %find_lang amtk-%{api}
 
 %files -f amtk-%{api}.lang
-%license COPYING
 %doc NEWS README.md
 
 %files -n %{girname}
