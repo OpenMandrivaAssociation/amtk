@@ -1,5 +1,5 @@
 %global api	5
-%global major	0
+%global major	1
 %define libname %mklibname amtk %api %major
 %define girname	%mklibname amtk-gir %{api}
 %define devname %mklibname -d amtk %api
