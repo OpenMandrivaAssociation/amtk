@@ -1,5 +1,5 @@
 %global api	5
-%global major	1
+%global major	0
 %define libname %mklibname amtk %api %major
 %define girname	%mklibname amtk-gir %{api}
 %define devname %mklibname -d amtk %api
@@ -7,7 +7,7 @@
 %define url_ver %(echo %{version} | cut -d. -f1,2)
 
 Name:           amtk
-Version:	5.6.0
+Version:	5.6.1
 Release:	1
 Summary:        Text editor product line
 Group:		System/Libraries
