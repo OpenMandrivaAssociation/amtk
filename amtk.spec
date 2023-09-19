@@ -37,6 +37,7 @@ editors and IDEs. Tepl is the acronym for “Text editor product line”.
 Summary:        Libraries for %{name}
 Group:		System/Libraries
 Requires:	%{name} >= %{version}-%{release}
+Provides:       libgedit-amtk = %{version}-%{release}
 Obsoletes:	%{_lib}amtk5 < 4.99.1-2
 
 %description    -n %{libname}
@@ -58,6 +59,7 @@ Group:		Development/Other
 Requires:       %{libname}%{?_isa} = %{version}-%{release}
 Requires:	%{girname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
+Provides:       libgedit-amtk-devel = %{version}-%{release}
 Obsoletes:	%{_lib}amtk-devel < 4.99.1-2
 
 %description    -n %{devname}
@@ -85,9 +87,9 @@ developing applications that use %{name}.
 
 find %{buildroot} -name '*.la' -delete
 
-%find_lang amtk-%{api}
+%find_lang libgedit-amtk-%{api}
 
-%files -f amtk-%{api}.lang
+%files -f libgedit-amtk-%{api}.lang
 %doc NEWS README.md
 
 %files -n %{girname}
