@@ -93,18 +93,18 @@ find %{buildroot} -name '*.la' -delete
 %doc NEWS README.md
 
 %files -n %{girname}
-%{_libdir}/girepository-1.0/Amtk-%{api}.typelib
+#{_libdir}/girepository-1.0/Amtk-%{api}.typelib
 
 %files -n %libname
-%{_libdir}/libamtk-%{api}.so.%{major}{,.*}
+#{_libdir}/libamtk-%{api}.so.%{major}{,.*}
 
 %files -n %devname
 #doc #{_datadir}/gtk-doc/html/amtk-5.0/
-%{_datadir}/gtk-doc/html/amtk-5/*
-%{_includedir}/amtk-%{api}/
-%{_libdir}/libamtk-%{api}.so
-%{_libdir}/pkgconfig/amtk-%{api}.pc
-%{_datadir}/gir-1.0/Amtk-%{api}.gir
+#{_datadir}/gtk-doc/html/amtk-5/*
+#{_includedir}/amtk-%{api}/
+#{_libdir}/libamtk-%{api}.so
+#{_libdir}/pkgconfig/amtk-%{api}.pc
+#{_datadir}/gir-1.0/Amtk-%{api}.gir
 
 #files tests
 #{_libexecdir}/installed-tests/amtk-%{api}/
