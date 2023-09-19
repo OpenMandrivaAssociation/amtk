@@ -7,14 +7,16 @@
 %define url_ver %(echo %{version} | cut -d. -f1,2)
 
 Name:           amtk
-Version:	5.6.1
-Release:	3
+Version:	5.8.0
+Release:	1
 Summary:        Text editor product line
 Group:		System/Libraries
 
 License:        LGPLv2+
 URL:            https://wiki.gnome.org/Projects/Amtk
-Source0:        https://download.gnome.org/sources/amtk/%{url_ver}/amtk-%{version}.tar.xz
+#Source0:        https://download.gnome.org/sources/amtk/%{url_ver}/amtk-%{version}.tar.xz
+# New name, new source.
+Source0:        https://gedit-technology.net/tarballs/libgedit-amtk/libgedit-amtk-%{version}.tar.xz
 
 BuildRequires:  gcc
 BuildRequires:  meson
@@ -71,7 +73,7 @@ developing applications that use %{name}.
 #the functionality of the installed %{name} package.
 
 %prep
-%autosetup -p1
+%autosetup -n libgedit-amtk-%{version} -p1
 
 %build
 %meson  \
