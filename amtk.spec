@@ -66,14 +66,6 @@ Obsoletes:	%{_lib}amtk-devel < 4.99.1-2
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
-#package        tests
-#Summary:        Tests for the %{name} package
-#Requires:       %{name}%{?_isa} = %{version}-%{release}
-
-#description    tests
-#The %{name}-tests package contains tests that can be used to verify
-#the functionality of the installed %{name} package.
-
 %prep
 %autosetup -n libgedit-amtk-%{version} -p1
 
@@ -93,19 +85,14 @@ find %{buildroot} -name '*.la' -delete
 %doc NEWS README.md
 
 %files -n %{girname}
-#{_libdir}/girepository-1.0/Amtk-%{api}.typelib
+%{_libdir}/girepository-1.0/Amtk-%{api}.typelib
 
 %files -n %libname
-#{_libdir}/libamtk-%{api}.so.%{major}{,.*}
+%{_libdir}/libgedit-amtk-%{api}.so.%{major}*
 
 %files -n %devname
-#doc #{_datadir}/gtk-doc/html/amtk-5.0/
-#{_datadir}/gtk-doc/html/amtk-5/*
-#{_includedir}/amtk-%{api}/
-#{_libdir}/libamtk-%{api}.so
-#{_libdir}/pkgconfig/amtk-%{api}.pc
-#{_datadir}/gir-1.0/Amtk-%{api}.gir
-
-#files tests
-#{_libexecdir}/installed-tests/amtk-%{api}/
-#{_datadir}/installed-tests/amtk-%{api}/
+%doc %{_datadir}/gtk-doc/html/libgedit-amtk-%{api}/
+%{_includedir}/libgedit-amtk-%{api}/amtk/
+%{_libdir}/libgedit-amtk-%{api}.so
+%{_libdir}/pkgconfig/libgedit-amtk-%{api}.pc
+%{_datadir}/gir-1.0/Amtk-%{api}.gir
