@@ -8,7 +8,7 @@
 
 Name:           amtk
 Version:	5.8.0
-Release:	1
+Release:	2
 Summary:        Text editor product line
 Group:		System/Libraries
 
@@ -29,6 +29,8 @@ BuildRequires:  pkgconfig(gtk-doc)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(uchardet)
 
+Obsoletes:	%{name} < %{EVRD}
+
 %description
 Tepl is a library that eases the development of GtkSourceView-based text
 editors and IDEs. Tepl is the acronym for “Text editor product line”.
@@ -39,6 +41,7 @@ Group:		System/Libraries
 Requires:	%{name} >= %{version}-%{release}
 Provides:       libgedit-amtk = %{version}-%{release}
 Obsoletes:	%{_lib}amtk5 < 4.99.1-2
+Obsoletes:	%{libname} < %{EVRD}
 
 %description    -n %{libname}
 The %{name}-devel package contains libraries and header files for
@@ -49,6 +52,7 @@ Summary:	GObject Introspection interface description for Amtk
 Group:		System/Libraries
 Requires:	%{libname} = %{version}-%{release}
 Conflicts:	%{name} < 4.99.1-2
+Obsoletes:	%{girname} < %{EVRD}
 
 %description -n %{girname}
 GObject Introspection interface description for Amtk.
@@ -61,6 +65,7 @@ Requires:	%{girname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:       libgedit-amtk-devel = %{version}-%{release}
 Obsoletes:	%{_lib}amtk-devel < 4.99.1-2
+Obsoletes:	%{devname} < %{EVRD}
 
 %description    -n %{devname}
 The %{name}-devel package contains libraries and header files for
