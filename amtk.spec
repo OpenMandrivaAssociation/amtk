@@ -8,7 +8,7 @@
 
 Name:           amtk
 Version:	5.8.0
-Release:	2
+Release:	3
 Summary:        Text editor product line
 Group:		System/Libraries
 
