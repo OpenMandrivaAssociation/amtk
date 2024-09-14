@@ -7,8 +7,8 @@
 %define url_ver %(echo %{version} | cut -d. -f1,2)
 
 Name:           amtk
-Version:	5.8.0
-Release:	3
+Version:	5.9.0
+Release:	1
 Summary:        Text editor product line
 Group:		System/Libraries
 
@@ -16,7 +16,8 @@ License:        LGPLv2+
 URL:            https://wiki.gnome.org/Projects/Amtk
 #Source0:        https://download.gnome.org/sources/amtk/%{url_ver}/amtk-%{version}.tar.xz
 # New name, new source.
-Source0:        https://gedit-technology.net/tarballs/libgedit-amtk/libgedit-amtk-%{version}.tar.xz
+#Source0:        https://gedit-technology.net/tarballs/libgedit-amtk/libgedit-amtk-%{version}.tar.xz
+Source0:        https://gitlab.gnome.org/World/gedit/libgedit-amtk/-/archive/%{version}/libgedit-amtk-%{version}.tar.bz2
 
 BuildRequires:  gcc
 BuildRequires:  meson
